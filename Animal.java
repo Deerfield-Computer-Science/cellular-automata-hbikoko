@@ -15,6 +15,7 @@
 	
 	class Eat extends Animal {
 		public void eat() {
+			System.out.print("I made a change");
 			//MyLifeSpan++
 			//Height++
 			//Width++
