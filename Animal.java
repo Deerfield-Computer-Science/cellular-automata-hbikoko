@@ -1,6 +1,9 @@
 
 	public abstract class Animal extends LifeForm {
-
+		
+		protected int myStrength; 
+		//pegasus: 4
+		
 		public Animal(Location loc, World w) {
 			super(loc, w);
 		}
@@ -13,13 +16,6 @@
 		
 	}
 	
-	class Eat extends Animal {
-		public void eat() {
-			System.out.print("I made a change");
-			//MyLifeSpan++
-			//Height++
-			//Width++
-		}
-	}
+	
 
 

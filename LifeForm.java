@@ -59,6 +59,10 @@ public abstract class LifeForm {
 		return myLocation;
 	}
 	
+	public World getMyWorld() {
+		return myWorld;
+	}
+	
 	public void setMyLocation(Location myLocation) {
 		this.myLocation = myLocation;
 	}
