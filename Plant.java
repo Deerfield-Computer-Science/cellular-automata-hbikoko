@@ -6,4 +6,6 @@ public abstract class Plant extends LifeForm {
 		super(loc, w);
 		myColor = Color.green;
 	}
+	
+	public abstract void move();
 }

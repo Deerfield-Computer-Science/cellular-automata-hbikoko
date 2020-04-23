@@ -15,4 +15,10 @@ public class Grass extends Plant {
 		myWorld.getCreatureList().add(new Grass(new Location(newX,newY), myWorld));
 	}
 
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

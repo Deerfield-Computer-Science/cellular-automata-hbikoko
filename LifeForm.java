@@ -22,6 +22,8 @@ public abstract class LifeForm {
 		alive = true;
 	}
 	
+	public abstract void move();
+	
 	public LifeForm(Location myLocation, World myWorld) {
 		super();
 		this.myWorld = myWorld;

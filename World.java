@@ -16,6 +16,7 @@ public class World {
 	public void letTimePass(){
 		
 		makeNewCreatures();
+		creatureList.get(2).move();
 		//eatThings();
 		//creaturesGetOlder();
 		//purgeTheDead();		
