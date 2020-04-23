@@ -9,14 +9,16 @@ public abstract class LifeForm {
 	protected Color myColor;
 	protected int myAge;
 	protected boolean alive;
+	protected int survivalNum;
 	
 	// lifeform constructors
-	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld) {
+	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld, int startingSurvival) {
 		super();
 		this.myLifeSpan = myLifeSpan;
 		this.myLocation = myLocation;
 		this.myColor = myColor;
 		this.myWorld = myWorld;
+		this.survivalNum = startingSurvival;
 		alive = true;
 	}
 	
