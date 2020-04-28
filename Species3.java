@@ -1,19 +1,18 @@
-
 import java.awt.Color;
 
 import acm.util.RandomGenerator;
-//Minor changes from Species1 are listed below
-public class Species2 extends Animal {
+//Minor changes from Species2 are listed below
+public class Species3 extends Animal {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
-	public Species2(Location loc, World w, int Lifespan, Color myColor, int StartingSurvival) {
+	public Species3(Location loc, World w, int Lifespan, Color myColor, int StartingSurvival) {
 		super(loc, w, Lifespan, myColor, StartingSurvival);
 	}
 
-	public Species2(Location loc, World w) {
+	public Species3(Location loc, World w) {
 		super(loc, w);
-		myLifeSpan = 4;
-		myColor = Color.RED;
+		myLifeSpan = 9;
+		myColor = Color.YELLOW;
 		
 	}
 
@@ -29,26 +28,26 @@ public class Species2 extends Animal {
 	}
 
 	// returns one creature surrounding if there is one, and will return null if there are none
-	public int inAPack() {
-		int packNum =0;
-		for(int x=-1; x< 2; x++) {
-			for (int y= -1; y<2;y++) {
-				Location neighboringSqr = new Location(getMyLocation().getX()+x, getMyLocation().getY()+y);
-				for(int j=0; j< myWorld.getCreatureList().size();j++) {
-					LifeForm creature = myWorld.getCreatureList().get(j);
-					if(creature.getMyLocation().equals(neighboringSqr)) {
-						if (creature.getMyLocation().equals(getMyLocation())==false) {
-							if(creature instanceof Species1) {
-								packNum++;
+		public int inAPack() {
+			int packNum =0;
+			for(int x=-1; x< 2; x++) {
+				for (int y= -1; y<2;y++) {
+					Location neighboringSqr = new Location(getMyLocation().getX()+x, getMyLocation().getY()+y);
+					for(int j=0; j< myWorld.getCreatureList().size();j++) {
+						LifeForm creature = myWorld.getCreatureList().get(j);
+						if(creature.getMyLocation().equals(neighboringSqr)) {
+							if (creature.getMyLocation().equals(getMyLocation())==false) {
+								if(creature instanceof Species1) {
+									packNum++;
+								}
 							}
 						}
 					}
 				}
+				
 			}
-			
+			return packNum;	
 		}
-		return packNum;	
-	}
 
 	@Override
 	public void runAway() {
@@ -60,7 +59,7 @@ public class Species2 extends Animal {
 			Location myLoc = getMyLocation();
 			myWorld.getCreatureList().add(new Species2(new Location(myLoc.getX()+1,myLoc.getY()+1), myWorld));
 		}
-		
+		myLifeSpan--;
 	}
 
 	@Override
@@ -74,7 +73,7 @@ public class Species2 extends Animal {
 						if (creature.getMyLocation().equals(getMyLocation())==false) {
 							if(creature instanceof Grass) {
 								creature.alive =false;
-								survivalNum+=2;
+								survivalNum++;
 							}
 						}
 					}
@@ -84,16 +83,10 @@ public class Species2 extends Animal {
 	}
 		
 }
-
-//Changes:
-//Lower lifespan than Species 1
-//Color is red, instead of the blue of Species 1
-//Upon eating, the lifespan doesn't actually increase
-//Instead, the creature stays with a relatively low lifespan but has a
-//much higher survival number than other species because 
-//survivalNum increments by 2 instead of 1 in this species' eat method
-//My understanding is that Species2 can reproduce more, since they'll have the highest
-//survival number? 
-
-
-
+//Species3 has the highest lifespan
+//Eating increases the survival number by 1
+//Reproducing causes the lifespan to decrease 1, which is why there are not many Species3 creatures
+//There aren't many because they have such long lifespans already
+//And because of the penalty they face for reproducing, they reproduce less
+//So the Species3 doesn't have the strength in numbers that Species2 has
+//But the few Species3 that exist have much longer longevity than Species2 or 1

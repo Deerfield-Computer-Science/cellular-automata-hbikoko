@@ -23,6 +23,7 @@ public abstract class LifeForm {
 	}
 	
 	public abstract void move();
+	public abstract void eat();
 	
 	public LifeForm(Location myLocation, World myWorld) {
 		super();

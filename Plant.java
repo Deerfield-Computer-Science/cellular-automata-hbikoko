@@ -8,4 +8,5 @@ public abstract class Plant extends LifeForm {
 	}
 	
 	public abstract void move();
+	public abstract void eat();
 }

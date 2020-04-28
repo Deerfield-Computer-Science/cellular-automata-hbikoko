@@ -7,6 +7,8 @@ public class Grass extends Plant {
 		myLifeSpan = 3;
 	}
 	
+	//public void eat();
+	
 	public void reproduce() {
 		// this is silly code really, but as an example
 		int newX = (int)(Math.random()*20);

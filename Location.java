@@ -27,4 +27,8 @@ public class Location {
 	public String toString() {
 		return "Location [x=" + x + ", y=" + y + "]";
 	}
+	
+	public boolean equals(Location loc) {
+		return (x== loc.x && y == loc.y);
+	}
 }
